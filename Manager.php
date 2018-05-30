@@ -3,11 +3,17 @@
 class Manager
 {
      /**
-     * @param array Give the entire articles list sorted out DESC
-     * @return $articleAll
+     * @param array List complete des articles
+     * @return $article
      */
     public function getAll()
     {
+        $req = $this->getPDO()->query('SELECT * FROM articles');
+        $req->execute();
+        while ($data = $req->fetch()) {
+            $article = new Article($title);
+        }
+        return $article;
 
     }
 }
